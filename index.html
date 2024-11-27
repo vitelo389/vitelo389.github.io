@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pista</title>
+</head>
+<body>
+  <h1>¿Sabes cómo se llama la niña más linda del mundo?</h1>
+  <p>Una pista: su nombre empieza por la letra <strong>V</strong>.</p>
+  <form id="form">
+    <label for="nombre">Escribe un nombre:</label>
+    <input type="text" id="nombre" maxlength="9" required>
+    <button type="submit">Comprobar</button>
+  </form>
+
+  <script>
+    document.getElementById("form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const nombre = document.getElementById("nombre").value.toLowerCase();
+
+      switch (nombre) {
+        case "valentina":
+          window.location.href = "acierto.html";
+          break;
+        default:
+          window.location.href = "error.html";
+          break;
+      }
+    });
+  </script>
+</body>
+</html>
